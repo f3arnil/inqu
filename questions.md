@@ -32,15 +32,19 @@ console.log(a[b]);
 ### Q#4
 ```javascript
 
+function someFunction (a) {
+  if (!a) {
+    ...
+    return false;
+  }
+  ...
+  return true;
+};
+
 someFunction('some string data')
 someFunction(0);
 someFunction({ a: '1' });
 someFunction();
-
-function someFunction (a) {
-  if (!a) return false;
-  return true;
-};
 
 ```
 
