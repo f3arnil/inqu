@@ -48,8 +48,6 @@ someFunction();
 
 ```
 
-
-
 ### Q#5
 #### Put `a` value to `b` variable, and `b` value to `a` without creating additional variable
 ```javascript
@@ -129,8 +127,6 @@ for (var i = 0; i < 5; i++) {
   }
 })();
 ```
-
-...
 
 ### Q#12
 ```javascript
