@@ -32,15 +32,15 @@ console.log(a[b]);
 ### Q#4
 ```javascript
 
+someFunction('some string data')
+someFunction(0);
+someFunction({ a: '1' });
+someFunction();
+
 function someFunction (a) {
   if (!a) return false;
   return true;
 };
-
-test('some string data')
-test(0);
-test({ a: '1' });
-test();
 
 ```
 
@@ -49,8 +49,8 @@ test();
 ### Q#5
 #### Put `a` value to `b` variable, and `b` value to `a` without creating additional variable
 ```javascript
-const a = 1;
-const b = 2;
+let a = 1;
+let b = 2;
 
 // ...some code...
 
@@ -110,15 +110,6 @@ for (var i = 0; i < 5; i++) {
   var inner = () => {
     console.log('inner');
   };
-})();
-
-(() => {
-  console.log(inner);
-  inner();
-
-  function inner() {
-    console.log('inner');
-  }
 })();
 ```
 
