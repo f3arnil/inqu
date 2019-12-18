@@ -197,7 +197,7 @@ const MyComponent = ({
   
   if (loading) return (<Loader />);
   
-  return (<SomeComponent list={data} />);
+  return (<SomeComponent list={data} onItemClick={handleClick} />);
 }
 
 export default MyComponent;
