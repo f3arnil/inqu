@@ -177,7 +177,13 @@ render() {
 ### R3
 ```javascript
 
-const MyComponent = ({ searchTerm, requestData, loading, data, trackOnItemClick }) => {
+const MyComponent = ({
+  searchTerm,
+  requestData,
+  loading,
+  data,
+  trackOnItemClick,
+ }) => {
   useEffect(
     () => requestData(searchTerm),
     []
