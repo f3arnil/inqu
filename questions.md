@@ -203,3 +203,59 @@ const MyComponent = ({
 export default MyComponent;
 
 ```
+
+
+### Big O - 1
+```javascript
+const foo = array => {
+  let totalItems = 0;
+  let totalPrice = 0;
+  
+  for (let i = 0; i< array.length; i++) {
+    if (array[i].active) totalItems += 1;
+  }
+  
+  ...
+  
+  for (let index = 0; index < array.length; index++) {
+    if (array[i].active) totalPrice += array[i].price;
+  }
+  ...
+}
+```
+
+### Big O - 2
+```javascript
+const foo = array => {
+  let totalItems = 0;
+  let totalPrice = 0;
+  
+  for (let i = 0; i< array.length; i++) {
+    if (array[i].active) totalItems += 1;
+    ...
+    for (let index = 0; index < array.length; index++) {
+      if (array[i].active) totalPrice += array[i].price;
+    }
+    ...
+  }
+  ...
+}
+```
+
+### Big O - 3
+```javascript
+const foo = (a = [], b =[]) => {
+  let totalItems = 0;
+  let totalPrice = 0;
+  
+  for (let i = 0; i< a.length; i++) {
+    if (a[i].active) totalItems += 1;
+    ...
+    for (let index = 0; index < b.length; index++) {
+      if (b[i].active) totalPrice += array[i].price;
+    }
+    ...
+  }
+  ...
+}
+```
