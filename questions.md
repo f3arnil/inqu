@@ -143,5 +143,57 @@ for (var i = 0; i < 5; i++) {
 })();
 ```
 
+### R1
+```javascript
+...
+render() {
+  const { loaded } = this.props;
+  
+  if (!loaded) return <Loader />;
+  
+  return (
+    <SomeComponent />
+  )
+}
+...
+```
 
+### R2
+```javascript
+...
+render() {
+  const { a, b, c } = this.props;
+  return (
+    <MyComponent value1={a} value2={b} value3={c}>
+      <Title /> // Should receive a,b,c (from this component props)
+      <Description /> // Should receive a,b,c (from this component props)
+      ({ v1, v2, v3 }) => <Content value1={v1} value2={v2} value3={v3}/>
+    </MyComponent>
+  )
+}
+...
+```
 
+### R3
+```javascript
+
+const MyComponent = ({ searchTerm, requestData, loading, data, trackOnItemClick }) => {
+  useEffect(
+    () => requestData(searchTerm),
+    []
+  );
+  
+  const handleClick = (itemId) => {
+    const item = data[itemId];
+    
+    trackOnItemClick(item);
+  }
+  
+  if (loading) return (<Loader />);
+  
+  return (<SomeComponent list={data} />);
+}
+
+export default MyComponent;
+
+```
