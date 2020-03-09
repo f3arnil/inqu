@@ -237,7 +237,8 @@ render() {
 ### R4
 ```javascript
 
-// url: https://mywebsite.com/search?searchTerm=search%20request&itemsPerPage=15&page=2
+// url:
+// https://mywebsite.com/search?searchTerm=search%20request&itemsPerPage=15&page=2
 
 const MyComponent = ({
   searchTerm,
@@ -259,7 +260,8 @@ const MyComponent = ({
   }
   
   const handleSearchClick = searchterm => {
-    onSearch(searchterm); // onSearch callback will change url searchTerm query param only via history.push
+    // onSearch callback will change url searchTerm query param only via history.push
+    onSearch(searchterm); 
   };
   
   if (loading) return (<Loader />);
