@@ -145,6 +145,28 @@ let b = 2;
 
 ### R1
 ```javascript
+
+...
+  return(
+    <ul>
+      {data.map(title => (<li>{title}</li>))}
+    </ul>
+...
+
+Data set:
+
+1.
+  a) data = ['1', '2'];
+  b) data = ['1', '2', '3'];
+
+2.
+  a) data = ['2', '3'];
+  b) data = ['1', '2', '3'];
+
+```
+
+### R2
+```javascript
 ...
 render() {
   const { loaded, data = [] } = this.props;
@@ -196,7 +218,7 @@ export default ConnectedItem;
 ...
 ```
 
-### R2
+### R3
 ```javascript
 ...
 render() {
@@ -212,7 +234,7 @@ render() {
 ...
 ```
 
-### R3
+### R4
 ```javascript
 
 // url: https://mywebsite.com/search?searchTerm=search%20request&itemsPerPage=15&page=2
